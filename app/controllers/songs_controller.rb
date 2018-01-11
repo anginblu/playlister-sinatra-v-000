@@ -9,15 +9,6 @@ class SongsController < ApplicationController
   end
 
 
-  # get '/songs/:slug' do
-  #   if Song.find_by_slug(params[:slug]).nil?
-  #     "No song is found"
-  #   else
-  #     @song = Song.find_by_slug(params[:slug])
-  #     erb :'/songs/show'
-  #   end
-  # end
-
   get '/songs/new' do
     erb :'/songs/new'
   end
@@ -42,6 +33,15 @@ class SongsController < ApplicationController
 
     flash[:message] = "Successfully created song."
     # redirect to "/songs/#{@song.slug}"
+  end
+
+  get '/songs/:slug' do
+    if Song.find_by_slug(params[:slug]).nil?
+      "No song is found"
+    else
+      @song = Song.find_by_slug(params[:slug])
+      erb :'/songs/show'
+    end
   end
 
   # get '/songs/:slug/edit' do
