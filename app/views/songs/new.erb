@@ -14,7 +14,7 @@
 <label>Choose existing genre(s):</label>
   <br></br>
   <% Genre.all.each do |genre| %>
-    <input type="checkbox" name="genres[]" value="<%= genre.id %>"><br>
+    <input type="checkbox" name="genres[]" value="<%= genre.name %>"><br>
   <% end %>
 
   <br></br>
