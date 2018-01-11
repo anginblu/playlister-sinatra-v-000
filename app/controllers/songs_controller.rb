@@ -27,7 +27,7 @@ binding.pry
     if params["genre_name"].empty?
       params[:genres].each do |id|
         @genre = Genre.find(id)
-        @song.song_genres.create(genre: genre_name)}
+        @song.song_genres.create(genre: @genre)}
     else
       @song.song_genres.create(genre: params[:genre_name])
     end
