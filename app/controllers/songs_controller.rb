@@ -22,7 +22,7 @@ class SongsController < ApplicationController
     @song = Song.create(name: params["Name"])
 
     if Artist.find_by(name: params["artist_name"]).nil?
-      @artist = Artist.create(name: params["Artist Name"])
+      @artist = Artist.create(name: params["artist_name"])
       @song.artist = @artist
     else
       @song.artist = Artist.find_by(name: params["Artist Name"])
