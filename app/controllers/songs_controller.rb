@@ -66,7 +66,7 @@ class SongsController < ApplicationController
     end
 
     if params["genre_name"].empty?
-      @song.genres.empty!
+      @song.genres = p[]
       params[:genres].each do |id|
         @genre = Genre.find(id)
         @song.song_genres.create(genre: @genre)
