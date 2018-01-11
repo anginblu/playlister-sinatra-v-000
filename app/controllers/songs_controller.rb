@@ -22,7 +22,7 @@ class SongsController < ApplicationController
     erb :'/songs/new'
   end
 
-  post '/songs' do
+  post '/songs/new' do
     @song = Song.create(name: params["Name"])
 
     if Artist.find_by(name: params[:artist][:name]).nil?
