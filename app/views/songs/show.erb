@@ -8,6 +8,7 @@
   <li>
     <%unless @song.artist.nil?%>
       <a href="/artists/<%=@song.artist.slug%>"><%=@song.artist.name%></a><br>
+    <%end%>
   </li>
 
 <h3>Genres:</h3>
