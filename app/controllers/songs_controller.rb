@@ -42,8 +42,11 @@ class SongsController < ApplicationController
 
   get '/songs/:slug/edit' do
     if Song.find_by_slug(params[:slug]).nil?
-      
-    erb :'/songs/edit'
+      "No song is found"
+    else
+      @song = Song.find_by_slug(params[:slug])
+      erb :'/songs/edit'
+    end
   end
 
   post '/songs/:slug/edit' do
