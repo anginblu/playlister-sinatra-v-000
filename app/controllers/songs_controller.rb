@@ -24,12 +24,12 @@ class SongsController < ApplicationController
     end
     @song.save
 
-    # if params["genre_name"].empty?
-    #   @song.genres << params[:genres]
-    # else
-    #   @song.song_genres.create(genre: params[:genres])
-    # end
-    # @song.save
+    if params["genre_name"].empty?
+      @song.genres << params[:genres]
+    else
+      @song.song_genres.create(genre: params[:genres])
+    end
+    @song.save
 
     flash[:message] = "Successfully created song."
     redirect to "/songs/#{@song.slug}"
