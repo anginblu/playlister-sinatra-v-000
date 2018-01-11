@@ -46,7 +46,8 @@ class SongsController < ApplicationController
       if @song.artist.nil?
         @artist = @song.artist
       else
-        
+        @artist = @song.artist
+      end
       erb :'/songs/show'
     end
   end
