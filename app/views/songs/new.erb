@@ -5,10 +5,6 @@
 <input type="text" name="Name" placeholder="New Song:"><br>
 
 <label>Choose the song's artist:</label><br>
-    <% Artist.all.each do |i| %>
-      <input type="checkbox" name="artist[]" id="<%= i.id %>" value="<%= i.name %>"><%= i.name %></input><br>
-    <% end %>
-<label>and/or, create a new artist:</label>
   <input type="text" name="Artist Name" placeholder="Song's Artist:"><br>
 
 <label>Choose existing genre(s):</label>
