@@ -5,7 +5,11 @@
 <input type="text" name="name" placeholder="Song Name:"><br>
 
 <label>Choose the song's artist:</label><br>
-  <input type="text" name="artist_name" placeholder="Song's Artist:"><br>
+<% Genre.all.each do |genre| %>
+  <input type="checkbox" name="genres[]" value="<%= genre.id %>"><br>
+<% end %>
+<label>and/or, create a new artist:</label>
+<input type="text" name="artist_name" placeholder="Song's Artist:"><br>
 
 <label>Choose existing genre(s):</label>
   <br></br>
