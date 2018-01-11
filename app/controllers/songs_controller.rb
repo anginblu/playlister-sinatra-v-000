@@ -44,25 +44,25 @@ class SongsController < ApplicationController
     # redirect to "/songs/#{@song.slug}"
   end
 
-  get '/songs/:slug/edit' do
-    if Song.find_by_slug(params[:slug]).nil?
-      "No song is found"
-    else
-      @song = Song.find_by_slug(params[:slug])
-      erb :'/songs/edit'
-    end
-  end
-
-  post '/songs/:slug/edit' do
-    @song = Song.create(name: params["Name"])
-
-    if Artist.find_by(name: params["Artist Name"]).nil?
-      @artist = Artist.create(name: params["Artist Name"])
-      @song.artist = @artist
-    else
-      @song.artist = Artist.find_by(name: params["Artist Name"])
-    end
-    @song.save
+  # get '/songs/:slug/edit' do
+  #   if Song.find_by_slug(params[:slug]).nil?
+  #     "No song is found"
+  #   else
+  #     @song = Song.find_by_slug(params[:slug])
+  #     erb :'/songs/edit'
+  #   end
+  # end
+  #
+  # post '/songs/:slug/edit' do
+  #   @song = Song.create(name: params["Name"])
+  #
+  #   if Artist.find_by(name: params["Artist Name"]).nil?
+  #     @artist = Artist.create(name: params["Artist Name"])
+  #     @song.artist = @artist
+  #   else
+  #     @song.artist = Artist.find_by(name: params["Artist Name"])
+  #   end
+  #   @song.save
 
     # if params["genre_name"].empty?
     #   @song.genres.update(params[:genres])
@@ -72,8 +72,8 @@ class SongsController < ApplicationController
     # @song.save
 
 
-    flash[:message] = "Successfully updated song."
-    redirect to "/songs/#{@song.slug}"
-  end
+  #   flash[:message] = "Successfully updated song."
+  #   redirect to "/songs/#{@song.slug}"
+  # end
 
 end
