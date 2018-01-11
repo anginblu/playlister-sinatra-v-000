@@ -6,7 +6,7 @@
 
 <h3>Artist:</h3>
   <li>
-    <%@song.genres.each do |object|%>
+    <%@song.artist.each do |object|%>
       <a href="/artists/<%=@song.artist.slug%>"><%=@song.artist.name%></a><br>
     <%end%>
   </li>
