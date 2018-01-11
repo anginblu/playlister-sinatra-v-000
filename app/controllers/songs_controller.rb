@@ -10,8 +10,12 @@ class SongsController < ApplicationController
 
 
   get '/songs/:slug' do
-    @song = Song.find_by_slug(params[:slug])
-    erb :'/songs/show'
+    if Song.find_by_slug(params[:slug]).nil?
+      "No song is found"
+    else
+      @song = Song.find_by_slug(params[:slug])
+      erb :'/songs/show'
+    end
   end
 
   get '/songs/new' do
