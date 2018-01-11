@@ -6,3 +6,4 @@ set(:genre_2_name) { "New Age Garbage" }
 set(:song_name) { "That One with the Guitar" }
 set(:genre_1) { Genre.create(name: genre_1_name) }
 set(:genre_2) { Genre.create(name: genre_2_name) }
+@song = Song.create(name: song_name)
