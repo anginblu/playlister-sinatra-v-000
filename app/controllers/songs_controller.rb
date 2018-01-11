@@ -41,7 +41,8 @@ class SongsController < ApplicationController
   end
 
   get '/songs/:slug/edit' do
-    @song = Song.find_by_slug(params[:slug])
+    if Song.find_by_slug(params[:slug]).nil?
+      
     erb :'/songs/edit'
   end
 
