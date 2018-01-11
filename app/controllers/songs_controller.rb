@@ -25,7 +25,7 @@ class SongsController < ApplicationController
       @artist = Artist.create(name: params[:artist][:name])
       @song.artist = @artist
     else
-      @song.artist = Artist.find_by(name: params["Artist Name"])
+      @song.artist = Artist.find_by(name: params[:artist][:name])
     end
     @song.save
 
