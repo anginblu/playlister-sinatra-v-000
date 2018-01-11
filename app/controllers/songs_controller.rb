@@ -27,7 +27,7 @@ class SongsController < ApplicationController
     if params["genre_name"].empty?
       @song.genres << params[:genres]
     else
-      @song.song_genres.create(genre: params[:genres])
+      @song.song_genres.create(genre: params[:genre_name])
     end
     @song.save
 
