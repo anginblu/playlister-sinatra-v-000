@@ -57,7 +57,7 @@ class SongsController < ApplicationController
   end
 
   post '/songs/:slug' do
-    @song = Song.find_by_slug(name: params[:slug])
+    @song = Song.find_by_slug(params[:slug])
 
     if !Artist.find_by(name: params["Artist Name"]).nil?
       @artist = Artist.create(name: params["Artist Name"])
