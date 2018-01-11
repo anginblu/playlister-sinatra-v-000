@@ -2,8 +2,6 @@
 
 <form action="/songs/<%=@song.slug%>" method="POST">
 
-<input type="text" name="Name" placeholder="New Name:"><br><br>
-
 <label>Choose the song's artist:</label><br>
   Existing Artist: <input type="checkbox" name="existing_artist" id="<%=@song.artist%>" value="<%=@song.id%>"<%='checked'%>><%=@song.artist.name%></input><br>
   New Artist: <input type="text" name="Artist Name"><br><br>
