@@ -23,7 +23,7 @@ class SongsController < ApplicationController
       @song.artist = Artist.find_by(name: params["Artist Name"])
     end
     @song.save
-    
+
     if params["genre_name"].empty?
       params[:genres].each do |id|
         @genre = Genre.find(id)
@@ -56,7 +56,7 @@ class SongsController < ApplicationController
     end
   end
 
-  post '/songs/:slug/edit' do
+  post '/songs/:slug' do
     @song = Song.find_by(name: params[:slug])
 
     if Artist.find_by(name: params["Artist Name"]).nil?
