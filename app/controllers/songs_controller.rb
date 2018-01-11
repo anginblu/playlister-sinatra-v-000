@@ -47,8 +47,8 @@ class SongsController < ApplicationController
         @artist = @song.artist
       else
         @artist = @song.artist
+        erb :'/songs/show'
       end
-      erb :'/songs/show'
     end
   end
 
