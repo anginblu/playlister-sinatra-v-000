@@ -43,6 +43,7 @@ class SongsController < ApplicationController
       "No song is found"
     else
       @song = Song.find_by_slug(params[:slug])
+      if @song.artist.nil?
       @artist = @song.artist
       erb :'/songs/show'
     end
