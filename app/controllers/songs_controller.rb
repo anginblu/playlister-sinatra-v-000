@@ -59,7 +59,7 @@ class SongsController < ApplicationController
   post '/songs/:slug' do
     @song = Song.find_by(name: params[:slug])
 
-    if Artist.find_by(name: params["Artist Name"]).nil?
+    if Artist.find(params["Artist Name"]).nil?
       @artist = Artist.create(name: params["Artist Name"])
     else
       @song.artist = Artist.find_by(name: params["existing_artist"])
