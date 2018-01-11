@@ -63,8 +63,7 @@ class SongsController < ApplicationController
       @artist = Artist.create(name: params["Artist Name"])
       @song.artist = @artist
       @song.save
-    else
-      @song = 
+    
     end
 
     if params["genre_name"].empty?
