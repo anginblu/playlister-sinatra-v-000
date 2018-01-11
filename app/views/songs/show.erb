@@ -6,6 +6,7 @@
 
 <h3>Artist:</h3>
   <li>
+    <&unless @song.artist.nil?&
     <a href="/artists/<%=@artist.slug%>"><%=@artist.name%></a><br>
   </li>
 
