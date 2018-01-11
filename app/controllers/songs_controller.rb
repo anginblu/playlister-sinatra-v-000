@@ -25,7 +25,7 @@ class SongsController < ApplicationController
     @song.save
 binding.pry
     if params["genre_name"].empty?
-      @song.genres << params[:genres][]
+      params[:genres].each {|genre_name| @song.song_genres.create(genre: params[:genre_name])}
     else
       @song.song_genres.create(genre: params[:genre_name])
     end
