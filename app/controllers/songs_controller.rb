@@ -66,6 +66,7 @@ class SongsController < ApplicationController
     end
 
     if params["genre_name"].empty?
+      binding.pry
       @song.genres = []
       params[:genres].each do |id|
         @genre = Genre.find(id)
