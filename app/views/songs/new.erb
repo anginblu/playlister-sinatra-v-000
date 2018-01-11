@@ -13,7 +13,7 @@
 
 <label>Choose existing genre(s):</label>
   <br></br>
-  <% Genre.all.each do |genre| %>
+  <% Genre.all.each do |ii| %>
     <input type="checkbox" name="genres[]" value="<%= genre.name %>"><br>
   <% end %>
 
