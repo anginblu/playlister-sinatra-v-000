@@ -23,7 +23,6 @@ class SongsController < ApplicationController
       @song.artist = Artist.find_by(name: params["Artist Name"])
     end
     @song.save
-binding.pry
     if params["genre_name"].empty?
       params[:genres].each {|genre_name| @song.song_genres.create(genre: genre_name)}
     else
